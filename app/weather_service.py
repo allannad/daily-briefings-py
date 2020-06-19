@@ -5,11 +5,11 @@ import json
 from pprint import pprint
 
 import requests
-from dotenv import load_dotenv
+from dotenv import load_dotenv #python-dotenv is the name from the requirements.txt file
 
 from app import APP_ENV
 
-load_dotenv()
+load_dotenv() #load contents of .env file into environmnet so os module can read
 
 OPEN_WEATHER_API_KEY = os.getenv("OPEN_WEATHER_API_KEY")
 MY_ZIP = os.getenv("MY_ZIP", default="20057")
@@ -39,7 +39,7 @@ def get_hourly_forecasts(zip_code=MY_ZIP, country_code=COUNTRY_CODE):
         })
     return result
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
 
     if APP_ENV == "development":
         zip_code = input("PLEASE INPUT A ZIP CODE (e.g. 06510): ")
